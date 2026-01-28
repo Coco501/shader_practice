@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pkaxd"]
 shader = ExtResource("1_n31yw")
-shader_parameter/new_color = Color(0.53428596, 0.14351556, 0.37989637, 1)
+shader_parameter/new_color = Color(0.3997386, 0.042636983, 0.26737472, 1)
 shader_parameter/enabled = true
 
 [node name="Clone2" type="Node2D"]
