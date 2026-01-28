@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dieplgkymson3"]
 
 [ext_resource type="Texture2D" uid="uid://bko50iwfkqtim" path="res://assets/1550092912.png" id="1_e1kak"]
-[ext_resource type="Shader" uid="uid://c2mbrgnnkngp8" path="res://resources/grass_sway.tres" id="1_yarb5"]
+[ext_resource type="Shader" uid="uid://c2mbrgnnkngp8" path="res://resources/grass_sway_visual.tres" id="1_yarb5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3kunl"]
 shader = ExtResource("1_yarb5")
