@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://di7lwic6ouke3"]
+
+[ext_resource type="PackedScene" uid="uid://dieplgkymson3" path="res://scenes/grass.tscn" id="1_nnsk1"]
+
+[node name="World" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Grass" parent="." instance=ExtResource("1_nnsk1")]
