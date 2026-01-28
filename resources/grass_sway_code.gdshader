@@ -6,6 +6,6 @@ uniform bool enabled = true;
 void vertex() {
 	if (enabled && VERTEX.y < 0.0) {
 		float sway_offset = sin(TIME * sway_speed) * 100.0;
-		VERTEX.x = VERTEX.x + sway_offset;
+		VERTEX.x += sway_offset;
 	}
 }
