@@ -5,6 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3kunl"]
 shader = ExtResource("1_yarb5")
+shader_parameter/Enable = false
 
 [node name="Grass" type="Node2D"]
 
