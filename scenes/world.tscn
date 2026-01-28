@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://di7lwic6ouke3"]
+[gd_scene load_steps=4 format=3 uid="uid://di7lwic6ouke3"]
 
 [ext_resource type="PackedScene" uid="uid://dieplgkymson3" path="res://scenes/grass.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://ceqkt47xchfql" path="res://scenes/grass_2.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://ufm6kf5xcids" path="res://scenes/clone.tscn" id="3_4wyf3"]
 
 [node name="World" type="Node"]
 
@@ -11,3 +12,6 @@
 
 [node name="Grass2" parent="." instance=ExtResource("2_rwgxs")]
 position = Vector2(180, 3)
+
+[node name="Clone" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-160, -14)
