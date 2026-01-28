@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://di7lwic6ouke3"]
+[gd_scene load_steps=3 format=3 uid="uid://di7lwic6ouke3"]
 
 [ext_resource type="PackedScene" uid="uid://dieplgkymson3" path="res://scenes/grass.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://ceqkt47xchfql" path="res://scenes/grass_2.tscn" id="2_rwgxs"]
 
 [node name="World" type="Node"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Grass" parent="." instance=ExtResource("1_nnsk1")]
+
+[node name="Grass2" parent="." instance=ExtResource("2_rwgxs")]
+position = Vector2(180, 3)
