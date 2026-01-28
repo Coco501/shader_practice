@@ -1,11 +1,19 @@
-[gd_resource type="VisualShader" load_steps=11 format=3 uid="uid://c2mbrgnnkngp8"]
+[gd_resource type="VisualShader" load_steps=12 format=3 uid="uid://c2mbrgnnkngp8"]
 
 [sub_resource type="VisualShaderNodeBooleanParameter" id="VisualShaderNodeBooleanParameter_lc6wu"]
-parameter_name = "Enable"
+parameter_name = "enable"
 default_value_enabled = true
 default_value = true
 
 [sub_resource type="VisualShaderNodeIf" id="VisualShaderNodeIf_kh8xi"]
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_lc6wu"]
+parameter_name = "sway_speed"
+hint = 2
+max = 15.0
+step = 0.5
+default_value_enabled = true
+default_value = 0.5
 
 [sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_lc6wu"]
 function = 0
@@ -37,13 +45,14 @@ op_type = 0
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
-uniform bool Enable = true;
+uniform bool enable = true;
+uniform float sway_speed : hint_range(0.0, 15.0, 0.5) = 0.5;
 
 
 
 void vertex() {
 // BooleanParameter:10
-	bool n_out10p0 = Enable;
+	bool n_out10p0 = enable;
 
 
 // Input:5
@@ -55,9 +64,12 @@ void vertex() {
 	float n_out3p0 = TIME;
 
 
+// FloatParameter:12
+	float n_out12p0 = sway_speed;
+
+
 // FloatOp:7
-	float n_in7p1 = 0.50000;
-	float n_out7p0 = n_out3p0 * n_in7p1;
+	float n_out7p0 = n_out3p0 * n_out12p0;
 
 
 // FloatFunc:2
@@ -147,4 +159,6 @@ nodes/vertex/10/node = SubResource("VisualShaderNodeBooleanParameter_lc6wu")
 nodes/vertex/10/position = Vector2(0, 340)
 nodes/vertex/11/node = SubResource("VisualShaderNodeIf_kh8xi")
 nodes/vertex/11/position = Vector2(340, 100)
-nodes/vertex/connections = PackedInt32Array(2, 0, 4, 0, 5, 2, 6, 0, 3, 0, 7, 0, 7, 0, 2, 0, 6, 0, 8, 1, 4, 0, 9, 0, 9, 0, 6, 5, 5, 0, 8, 0, 10, 0, 11, 0, 8, 0, 11, 4, 11, 0, 0, 0, 5, 0, 11, 3)
+nodes/vertex/12/node = SubResource("VisualShaderNodeFloatParameter_lc6wu")
+nodes/vertex/12/position = Vector2(-1300, 420)
+nodes/vertex/connections = PackedInt32Array(2, 0, 4, 0, 5, 2, 6, 0, 3, 0, 7, 0, 7, 0, 2, 0, 6, 0, 8, 1, 4, 0, 9, 0, 9, 0, 6, 5, 5, 0, 8, 0, 10, 0, 11, 0, 8, 0, 11, 4, 11, 0, 0, 0, 5, 0, 11, 3, 12, 0, 7, 1)
