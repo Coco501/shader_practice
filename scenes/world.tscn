@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://di7lwic6ouke3"]
+[gd_scene load_steps=7 format=3 uid="uid://di7lwic6ouke3"]
 
 [ext_resource type="PackedScene" uid="uid://dieplgkymson3" path="res://scenes/grass.tscn" id="1_nnsk1"]
-[ext_resource type="PackedScene" uid="uid://ceqkt47xchfql" path="res://scenes/grass_2.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://ufm6kf5xcids" path="res://scenes/clone.tscn" id="3_4wyf3"]
-[ext_resource type="PackedScene" uid="uid://befcvuapne7l4" path="res://scenes/clone_2.tscn" id="4_k0juu"]
+[ext_resource type="Shader" uid="uid://b8bu761pms7j4" path="res://resources/clone_rgb_code.gdshader" id="3_k0juu"]
+[ext_resource type="Shader" uid="uid://degpbrsvtcbqx" path="res://resources/clone_rgb_visual.tres" id="4_k0juu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_71j4m"]
+shader = ExtResource("3_k0juu")
+shader_parameter/enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qfnet"]
+shader = ExtResource("4_k0juu")
+shader_parameter/enable = true
 
 [node name="World" type="Node"]
 
@@ -11,11 +19,22 @@
 
 [node name="Grass" parent="." instance=ExtResource("1_nnsk1")]
 
-[node name="Grass2" parent="." instance=ExtResource("2_rwgxs")]
-position = Vector2(180, 3)
+[node name="Grass2" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(172, -1)
+sway_speed = 3.0
 
 [node name="Clone" parent="." instance=ExtResource("3_4wyf3")]
 position = Vector2(-160, -14)
+clone_color = Color(0.5355938, 0.13634062, 0.4871627, 1)
 
-[node name="Clone2" parent="." instance=ExtResource("4_k0juu")]
-position = Vector2(324, -21)
+[node name="Clone2" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-334, -22)
+clone_color = Color(4.813075e-07, 0.3941946, 0.34736314, 1)
+
+[node name="Clone3" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-470, -21)
+material_override = SubResource("ShaderMaterial_71j4m")
+
+[node name="Clone4" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(345, -31)
+material_override = SubResource("ShaderMaterial_qfnet")

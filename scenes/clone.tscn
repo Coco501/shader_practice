@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ufm6kf5xcids"]
+[gd_scene load_steps=5 format=3 uid="uid://ufm6kf5xcids"]
 
+[ext_resource type="Script" uid="uid://bl5efngddxet6" path="res://scripts/clone.gd" id="1_51lvd"]
 [ext_resource type="Shader" uid="uid://1u3ts07lxc4c" path="res://resources/clone_color_visual.tres" id="1_rbuo6"]
 [ext_resource type="Texture2D" uid="uid://b1j04qodhxbn0" path="res://assets/lego_clone.png" id="2_51lvd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y37va"]
+resource_local_to_scene = true
 shader = ExtResource("1_rbuo6")
 shader_parameter/enable = true
-shader_parameter/color = Color(0.2967132, 0.3498141, 0.12800717, 1)
+shader_parameter/color = Color(0, 0.317647, 0.619608, 1)
 
 [node name="Clone" type="Node2D"]
+script = ExtResource("1_51lvd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_y37va")
