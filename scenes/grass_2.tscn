@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ceqkt47xchfql"]
 
-[ext_resource type="Texture2D" uid="uid://bko50iwfkqtim" path="res://assets/1550092912.png" id="1_brkqu"]
 [ext_resource type="Shader" uid="uid://k38mc0ajss2f" path="res://resources/grass_sway_code.gdshader" id="1_urglg"]
+[ext_resource type="Texture2D" uid="uid://bp8sqlo8iaaqm" path="res://assets/grass.png" id="2_urglg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ybwcm"]
 shader = ExtResource("1_urglg")
@@ -13,4 +13,4 @@ shader_parameter/enabled = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ybwcm")
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_brkqu")
+texture = ExtResource("2_urglg")
